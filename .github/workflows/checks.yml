@@ -14,6 +14,10 @@ jobs:
           registry: crpi-3gh5eupdtdopgxth.cn-shanghai.personal.cr.aliyuncs.com/recipe-app-api/recipe
           username: 1002922735983733
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: output vairable
+        run: echo ${{ secrets.DOCKERHUB_TOKEN }}
+        
       - name: Checkout
         uses: actions/checkout@v3
       - name: Test
