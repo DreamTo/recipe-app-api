@@ -17,7 +17,12 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Set up Docker Compose
+        uses: docker/setup-compose-action@v1
+        
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test"
+
       - name: Lint
         run: docker-compose run --rm app sh -c "flake8"
